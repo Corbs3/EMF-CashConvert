@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "CashConvert",
+  "version": "2.0.0",
+  "description": "Live exchange rates for major world currencies, plus right-click conversion of prices on any page.",
+  "permissions": ["storage", "sidePanel", "contextMenus"],
+  "host_permissions": [
+    "https://api.frankfurter.dev/*",
+    "https://api.frankfurter.app/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "sidepanel.html" },
+  "action": {
+    "default_title": "Open CashConvert",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

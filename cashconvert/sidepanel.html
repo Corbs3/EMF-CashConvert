@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>CashConvert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+<header class="top">
+  <div id="pennyHead" class="penny-head"></div>
+  <div>
+    <h1>CashConvert</h1>
+    <p id="greeting" class="greeting">Hi, I’m Penny! What shall we convert?</p>
+  </div>
+</header>
+
+<main>
+  <section id="found" class="found" hidden aria-live="polite">
+    <div class="found-top">
+      <div id="pennyFound" class="penny-found"></div>
+      <div>
+        <p class="muted-strong">Found on your page</p>
+        <p id="foundText" class="found-text"></p>
+      </div>
+      <button id="clearFound" class="icon-btn small" aria-label="Clear">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div id="foundPick" class="found-pick" hidden>
+      <label for="foundCur">Which currency is this?</label>
+      <select id="foundCur"></select>
+    </div>
+    <div class="found-result">
+      <div>
+        <p id="foundLabel" class="muted-strong">In GBP</p>
+        <p id="foundValue" class="found-value"></p>
+      </div>
+      <button id="copyBtn" class="pill-btn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg>
+        <span id="copyLabel">Copy</span>
+      </button>
+    </div>
+    <ul id="foundOthers" class="found-others"></ul>
+  </section>
+
+  <section class="card">
+    <label for="amount" class="muted-strong">Amount</label>
+    <div class="amount-row">
+      <input id="amount" inputmode="decimal" value="100" autocomplete="off">
+      <select id="base" aria-label="Base currency"></select>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Office currencies</h2>
+      <span class="hint">Tap a tile to make it the base</span>
+    </div>
+    <div id="tiles" class="tiles"></div>
+  </section>
+
+  <section class="card">
+    <h2>World converter</h2>
+    <div class="world-row">
+      <select id="from" aria-label="Convert from"></select>
+      <button id="swap" class="icon-btn" aria-label="Swap currencies">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4v16M7 4L3 8M7 4l4 4M17 20V4M17 20l-4-4M17 20l4-4"/></svg>
+      </button>
+      <select id="to" aria-label="Convert to"></select>
+    </div>
+    <p id="worldResult" class="world-result"></p>
+  </section>
+</main>
+
+<footer>
+  <div id="status" class="status">
+    <div id="pennyStatus" class="penny-status" hidden></div>
+    <span id="updated">Fetching today’s rates…</span>
+  </div>
+  <button id="refresh" class="icon-btn soft" aria-label="Refresh rates">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+  </button>
+</footer>
+
+<script src="penny.js"></script>
+<script src="parse.js"></script>
+<script src="sidepanel.js"></script>
+</body>
+</html>
